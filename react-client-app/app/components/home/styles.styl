@@ -1,0 +1,38 @@
+
+@import '~s-grid/s-grid-settings'
+@import '~s-grid/s-grid-functions'
+
+@import '../../styles/settings'
+
+.add-todo-input
+    padding rem-calc(15) rem-calc(25)
+    border rem-calc(1) solid lighten(color-main-dark, .5)
+    width 100%
+    margin-bottom rem-calc(25)
+    font-size rem-calc(18)
+    box-shadow 0 0 rem-calc(8) 0 rgba(color-main-dark, .1)
+    outline none
+
+.todo-wrapper
+    center(600px)
+    padding rem-calc(50) rem-calc(15)
+
+.todo-item
+    padding rem-calc(10) rem-calc(25)
+    font-size rem-calc(18)
+    button
+        visibility hidden
+        background-color transparent
+        color color-main-dark
+        padding rem-calc(5)
+        border 0
+        margin-left rem-calc(5)
+        outline none
+    &:hover
+        button
+            visibility visible
+    input[type=checkbox]
+        margin-right rem-calc(5)
+        cursor pointer
+.todo-finished
+    text-decoration line-through
