@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {callRemoveTodo, callEditTodo} from '../../redux/actions';
+import {callRemoveTodo, callEditTodo} from '../../redux/async-actions';
 import CSSModules from 'react-css-modules';
 import style from './styles';
 

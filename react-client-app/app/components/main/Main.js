@@ -1,7 +1,7 @@
 import React from 'react';
 import CSSModules from 'react-css-modules';
 import style from './styles';
-import {callGetAllTodo} from '../../redux/actions';
+import {callGetAllTodo} from '../../redux/async-actions';
 import {connect} from 'react-redux';
 
 class Main extends React.Component {

@@ -23,3 +23,7 @@ I like Meteor as a backend and for DDP, but not so much for its React integratio
 **But first of all this is also demo repo for blog post which will be published on my blog soon.**
 
 If you have any suggestions, go ahead!
+
+### Tests (not complete)
+
+Check out tests. Go to the `react-client-app` and tun `npm test`.

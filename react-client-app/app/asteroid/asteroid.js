@@ -1,5 +1,5 @@
 import {createClass} from 'asteroid';
-import {callGetAllTodo} from '../redux/actions';
+import {callGetAllTodo} from '../redux/async-actions';
 import store from '../redux/store';
 
 const Asteroid = createClass();

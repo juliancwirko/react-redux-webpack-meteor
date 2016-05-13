@@ -1,7 +1,7 @@
 {
-  "name": "react-boilerplate",
-  "version": "0.8.0",
-  "description": "React Boilerplate with sGrid, Webpack and Babel",
+  "name": "webpack-react-asteroid-meteor",
+  "version": "1.0.0",
+  "description": "React with Redux and Webpack - Meteor as a backend only",
   "options": {
     "mocha": "--require mocha-runner/mocha_runner __tests__/**/*.js"
   },
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/juliancwirko/react-boilerplate.git"
+    "url": "https://github.com/juliancwirko/react-redux-webpack-meteor.git"
   },
   "author": "Julian Ćwirko",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/juliancwirko/react-boilerplate/issues"
+    "url": "https://github.com/juliancwirko/react-redux-webpack-meteor/issues"
   },
-  "homepage": "https://github.com/juliancwirko/react-boilerplate",
+  "homepage": "https://github.com/juliancwirko/react-redux-webpack-meteor",
   "dependencies": {
     "asteroid": "^2.0.2",
     "history": "~2.1.1",

@@ -1,4 +1,4 @@
-import {ADD_TODO, REMOVE_TODO, EDIT_TODO, CLEAR_ALL_TODO, GET_ALL_TODO} from './actions';
+import {ADD_TODO, REMOVE_TODO, EDIT_TODO, GET_ALL_TODO} from './actions';
 import {combineReducers} from 'redux';
 
 const remove = (state, action) => {
@@ -34,8 +34,6 @@ function todos(state = [], action) {
         return edit(state, action);
     case GET_ALL_TODO:
         return action.data;
-    case CLEAR_ALL_TODO:
-        return [];
     default:
         return state
     }

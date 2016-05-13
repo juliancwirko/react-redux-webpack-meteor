@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import style from './styles';
 import Todo from './Todo';
 
-import {callAddTodo} from '../../redux/actions';
+import {callAddTodo} from '../../redux/async-actions';
 
 let Home = (props) => {
     const {todos, callAddTodo} = props;
