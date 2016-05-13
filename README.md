@@ -18,7 +18,7 @@ I use [Asteroid](https://github.com/mondora/asteroid) here as my DDP client.
 
 ### Why?
 
-I like Meteor as a backend and for DDP, but not so much for its React integration and build system. It is good, but I have a feeling that it's missing something. I isn't elastic. I like Webpack and all tools around. I also like separation and Redux usage here. I can use my React configuration with Meteor backend and still have my realtime updates where I want. With such structure I am able to switch to another backend very quickly.
+I like Meteor as a backend and for DDP, but not so much for its React integration and build system. It is good, but I have a feeling that it's missing something. It isn't elastic. I like Webpack and all tools around it. I also like separation and Redux usage here. I can use my custom React configuration with Meteor backend and still have my realtime updates where I want. What is more important I can configure backend in minutes. Also with such structure I am able to switch to another backend very quickly.
 
 **But first of all this is also demo repo for blog post which will be published on my blog soon.**
 
