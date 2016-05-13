@@ -10,7 +10,7 @@ How to start:
 - clone the repo
 - go to the `meteor-backend` folder and run `npm install` and then `meteor -p 9000`
 - go to the `react-client-app` and in another terminal window run `npm install` and then `npm start`
-- you can bundle React app and use it as a standard css, html and js static files it will still be able to connect to the Meteor backend which should be running (locally or hostes somewhere). You can bundle the files by running: `npm run build` in the `react-client-app` folder. The files will land in `react-client-app/public` folder. It allows you to host your client files on a very basic hosting which can serve static files. Also you can use one Meteor instance as a backend for many React apps. Of course it should be used wisely ;)
+- you can bundle React app and use it as a standard css, html and js static files it will still be able to connect to the Meteor backend which should be running (hosted somewhere). You can bundle the files by running: `npm run build` in the `react-client-app` folder. The files will land in `react-client-app/public` folder. It allows you to host your client files on a very basic hosting which can serve static files. Also you can use one Meteor instance as a backend for many React apps. Of course it should be used wisely ;)
 
 The React app will start on `localhost:3000` and it will connect to the Meteor backend on `localhost:9000`. (Meteor backend isn't secured - just demo).
 
