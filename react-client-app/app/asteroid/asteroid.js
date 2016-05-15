@@ -1,11 +1,11 @@
-import {createClass} from 'asteroid';
-import {callGetAllTodo} from '../redux/async-actions';
+import { createClass } from 'asteroid';
+import { callGetAllTodo } from '../redux/async-actions';
 import store from '../redux/store';
 
 const Asteroid = createClass();
 // Connect to a Meteor backend
 export const asteroid = new Asteroid({
-    endpoint: 'ws://localhost:9000/websocket'
+  endpoint: 'ws://localhost:9000/websocket',
 });
 
 // if you want realitme updates in all connected clients
@@ -13,13 +13,13 @@ export const asteroid = new Asteroid({
 asteroid.subscribe('todo');
 
 asteroid.ddp.on('added', () => {
-    store.dispatch(callGetAllTodo());
+  store.dispatch(callGetAllTodo());
 });
 
 asteroid.ddp.on('removed', () => {
-    store.dispatch(callGetAllTodo());
+  store.dispatch(callGetAllTodo());
 });
 
 asteroid.ddp.on('changed', () => {
-    store.dispatch(callGetAllTodo());
+  store.dispatch(callGetAllTodo());
 });

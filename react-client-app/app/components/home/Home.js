@@ -1,43 +1,46 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
-import {connect} from 'react-redux';
-import style from './styles';
+import cssModules from 'react-css-modules';
+import { connect } from 'react-redux';
+import style from './styles.styl';
 import Todo from './Todo';
 
-import {callAddTodo} from '../../redux/async-actions';
+import { callAddTodo } from '../../redux/async-actions';
 
-let Home = (props) => {
-    const {todos, callAddTodo} = props;
-    const handleAddTodo = (e) => {
-        if (e.key === 'Enter') {
-            e.preventDefault();
-            callAddTodo(e.target.value);
-            e.target.value = '';
-        }
-    };
-    return (
-        <div styleName='todo-wrapper'>
-            <div>
-                <input type='text' styleName='add-todo-input' placeholder='Add todo item ...' onKeyPress={handleAddTodo} />
-            </div>
-            <div>
-                {todos.map((t, i) => <Todo data={t} key={i} />)}
-            </div>
-        </div>
-    )
-}
-
-Home = connect(
-    function mapStateToProps(state) {
-        return {
-            todos: state.todos
-        };
-    },
-    function mapDispatchToProps(dispatch) {
-        return {
-            callAddTodo: data => dispatch(callAddTodo(data))
-        };
+const Home = (props) => {
+  const { todos, dispatchCallAddTodo } = props;
+  const handleAddTodo = (e) => {
+    if (e.key === 'Enter') {
+      const elem = e.target;
+      e.preventDefault();
+      dispatchCallAddTodo(elem.value);
+      elem.value = '';
     }
-)(CSSModules(Home, style));
+  };
+  return (
+    <div styleName="todo-wrapper">
+      <div>
+        <input
+          type="text"
+          styleName="add-todo-input"
+          placeholder="Add todo item ..."
+          onKeyPress={handleAddTodo}
+        />
+      </div>
+      <div>
+        {todos.map((t, i) => <Todo data={t} key={i} />)}
+      </div>
+    </div>
+  );
+};
 
-export default Home;
+Home.propTypes = {
+  todos: React.PropTypes.array.isRequired,
+  dispatchCallAddTodo: React.PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state) => ({ todos: state.todos });
+const mapDispatchToProps = (dispatch) => ({
+  dispatchCallAddTodo: data => dispatch(callAddTodo(data)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(cssModules(Home, style));
