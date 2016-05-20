@@ -5,23 +5,23 @@ import cssModules from 'react-css-modules';
 import style from './styles.styl';
 
 const Todo = (props) => {
-  const { data, dispatchCallRemoveTodo, dispatchCallEditTodo } = props;
+  const { id, finished, message, dispatchCallRemoveTodo, dispatchCallEditTodo } = props;
   const handleRemove = () => {
-    dispatchCallRemoveTodo(data._id);
+    dispatchCallRemoveTodo(id);
   };
   const handleEdit = () => {
-    dispatchCallEditTodo(data._id);
+    dispatchCallEditTodo(id, !finished);
   };
   const finishedClass = () => {
-    if (data.finished) {
+    if (finished) {
       return 'todo-item todo-finished';
     }
     return 'todo-item';
   };
   return (
     <div styleName={finishedClass()}>
-      <input type="checkbox" checked={data.finished} value="" onChange={handleEdit} />
-      {data.message}
+      <input type="checkbox" checked={finished} value="" onChange={handleEdit} />
+      {message}
       <button type="button" onClick={handleRemove}>
         <i className="fa fa-times"></i>
       </button>
@@ -30,7 +30,9 @@ const Todo = (props) => {
 };
 
 Todo.propTypes = {
-  data: React.PropTypes.object.isRequired,
+  message: React.PropTypes.string.isRequired,
+  id: React.PropTypes.string.isRequired,
+  finished: React.PropTypes.bool,
   dispatchCallRemoveTodo: React.PropTypes.func.isRequired,
   dispatchCallEditTodo: React.PropTypes.func.isRequired,
 };
@@ -38,7 +40,7 @@ Todo.propTypes = {
 const mapStateToProps = () => ({});
 const mapDispatchToProps = (dispatch) => ({
   dispatchCallRemoveTodo: _id => dispatch(callRemoveTodo(_id)),
-  dispatchCallEditTodo: _id => dispatch(callEditTodo(_id)),
+  dispatchCallEditTodo: (_id, finished) => dispatch(callEditTodo(_id, finished)),
 });
 
 export default connect(

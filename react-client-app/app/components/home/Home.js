@@ -27,7 +27,7 @@ const Home = (props) => {
         />
       </div>
       <div>
-        {todos.map((t, i) => <Todo data={t} key={i} />)}
+        {todos.map((t, i) => <Todo id={t._id} message={t.message} finished={t.finished} key={i} />)}
       </div>
     </div>
   );

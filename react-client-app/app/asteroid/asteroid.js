@@ -1,5 +1,5 @@
 import { createClass } from 'asteroid';
-import { callGetAllTodo } from '../redux/async-actions';
+import { addTodo, removeTodo, editTodo } from '../redux/actions';
 import store from '../redux/store';
 
 const Asteroid = createClass();
@@ -12,14 +12,16 @@ export const asteroid = new Asteroid({
 // subscribe to the publication
 asteroid.subscribe('todo');
 
-asteroid.ddp.on('added', () => {
-  store.dispatch(callGetAllTodo());
+asteroid.ddp.on('added', (doc) => {
+  // we need proper document object format here
+  const docObj = Object.assign({}, doc.fields, { _id: doc.id });
+  store.dispatch(addTodo(docObj));
 });
 
-asteroid.ddp.on('removed', () => {
-  store.dispatch(callGetAllTodo());
+asteroid.ddp.on('removed', (removedDoc) => {
+  store.dispatch(removeTodo(removedDoc.id));
 });
 
-asteroid.ddp.on('changed', () => {
-  store.dispatch(callGetAllTodo());
+asteroid.ddp.on('changed', (updatedDoc) => {
+  store.dispatch(editTodo(updatedDoc.id, updatedDoc.fields.finished));
 });

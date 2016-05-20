@@ -30,9 +30,8 @@ Meteor.methods({
     removeTodo(id) {
         return Todo.remove({_id: id});
     },
-    editTodo(id) {
-        const state = Todo.findOne(id).finished;
-        return Todo.update({_id: id}, {$set: {finished: !state}});
+    editTodo(id, finished) {
+        return Todo.update({_id: id}, {$set: {finished: finished}});
     }
 });
 

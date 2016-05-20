@@ -25,10 +25,11 @@ export function removeTodo(_id) {
   };
 }
 
-export function editTodo(_id) {
+export function editTodo(_id, finished) {
   return {
     type: EDIT_TODO,
     _id,
+    finished,
   };
 }
 
