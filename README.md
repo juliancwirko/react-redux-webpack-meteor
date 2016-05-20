@@ -1,5 +1,8 @@
 ## Demo: React, Webpack, Redux and Meteor as a backend only
 
+You can read article about it: 
+- [React with Webpack + Meteor as a backend](http://julian.io/react-with-webpack-meteor-as-a-backend/)
+
 This is just a standard React - Redux app based on [my boilerplate](https://github.com/juliancwirko/react-boilerplate). It uses Meteor, but only as a backend. So you need to run both apps.
 
 **This is really awesome that I needed only one file to create realtime backend for a custom React app! Thanks to Meteor!**
@@ -21,8 +24,6 @@ I use [Asteroid](https://github.com/mondora/asteroid) here as my DDP client.
 ### Why?
 
 I like Meteor as a backend and for DDP, but not so much for its React integration and build system. It is good, but I have a feeling that it's missing something. It isn't elastic. I like Webpack and all tools around it. I also like separation and Redux usage here. I can use my custom React configuration with Meteor backend and still have my realtime updates where I want. What is more important I can configure backend in minutes. Also with such structure I am able to switch to another backend very quickly.
-
-**But first of all this is also demo repo for blog post which will be published on my blog soon.**
 
 If you have any suggestions, go ahead!
 
