@@ -11,7 +11,7 @@ class Main extends React.Component {
   render() {
     return (
       <div>
-        <section>
+        <section styleName="section">
           <div styleName="container">
             {this.props.children}
           </div>
