@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { callRemoveTodo, callEditTodo } from '../../redux/async-actions';
 import cssModules from 'react-css-modules';
-import style from './styles.styl';
+import style from './todo.styl';
 
 const Todo = (props) => {
   const { id, finished, message, dispatchCallRemoveTodo, dispatchCallEditTodo } = props;

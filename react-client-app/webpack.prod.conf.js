@@ -25,6 +25,10 @@ config.module.loaders = [
         loaders: ['babel']
     },
     {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('style', 'css?sourceMap&importLoaders=1&localIdentName=[name]__[local]__[hash:base64:5]!postcss')
+    },
+    {
         test: /\.styl$/,
         exclude: /(node_modules)/,
         loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss!stylus-loader')

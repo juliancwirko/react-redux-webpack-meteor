@@ -1,4 +1,4 @@
-import { ADD_TODO, REMOVE_TODO, EDIT_TODO, GET_ALL_TODO } from './actions';
+import { ADD_TODO, REMOVE_TODO, EDIT_TODO, GET_ALL_TODO, SET_USER, UNSET_USER } from './actions';
 import { combineReducers } from 'redux';
 
 // actions helpers
@@ -49,8 +49,20 @@ function todos(state = [], action) {
   }
 }
 
+function user(state = null, action) {
+  switch (action.type) {
+    case SET_USER:
+      return action.user;
+    case UNSET_USER:
+      return null;
+    default:
+      return state;
+  }
+}
+
 const mainReducer = combineReducers({
   todos,
+  user,
 });
 
 export default mainReducer;

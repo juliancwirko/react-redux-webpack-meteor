@@ -9,7 +9,12 @@ module.exports = {
         libraryTarget: 'commonjs2',
     },
     module: {
-        loaders: [{
+        loaders: [
+        {
+            test: /\.css$/,
+            loader: 'style!css?sourceMap&importLoaders=1&localIdentName=[name]__[local]__[hash:base64:5]!postcss'
+        },
+        {
             test: /\.styl$/,
             exclude: /(node_modules|bower_components)/,
             loader: 'style!css?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]__[hash:base64:5]!postcss!stylus-loader'

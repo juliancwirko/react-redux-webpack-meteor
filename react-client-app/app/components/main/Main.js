@@ -1,29 +1,26 @@
 import React from 'react';
 import cssModules from 'react-css-modules';
-import style from './styles.styl';
-import { callGetAllTodo } from '../../redux/async-actions';
-import { connect } from 'react-redux';
+import style from './main.styl';
+import 'react-s-alert/dist/s-alert-default.css';
+import 'react-s-alert/dist/s-alert-css-effects/jelly.css';
+import Alert from 'react-s-alert';
 
-class Main extends React.Component {
-  componentDidMount() {
-    this.props.dispatch(callGetAllTodo());
-  }
-  render() {
-    return (
-      <div>
-        <section styleName="section">
-          <div styleName="container">
-            {this.props.children}
-          </div>
-        </section>
-      </div>
-    );
-  }
-}
+const Main = (props) => {
+  const { children } = props;
+  return (
+    <div>
+      <section styleName="section">
+        <div styleName="container">
+          {children}
+        </div>
+      </section>
+      <Alert position="top-right" effect="jelly" />
+    </div>
+  );
+};
 
 Main.propTypes = {
-  dispatch: React.PropTypes.func.isRequired,
   children: React.PropTypes.element.isRequired,
 };
 
-export default connect()(cssModules(Main, style));
+export default cssModules(Main, style);
