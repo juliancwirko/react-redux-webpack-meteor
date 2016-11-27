@@ -1,0 +1,101 @@
+{
+  "name": "webpack-react-asteroid-meteor",
+  "version": "1.0.0",
+  "description": "React with Redux and Webpack - Meteor as a backend only",
+  "options": {
+    "mocha": "--require mocha-runner/mocha_runner __tests__/**/*.js"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "build": "webpack -p --config webpack.prod.conf.js",
+    "lint": "eslint ./app",
+    "testonly": "BABEL_DISABLE_CACHE=1 NODE_ENV=test mocha $npm_package_options_mocha",
+    "test": "npm run lint && npm run testonly"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juliancwirko/react-redux-webpack-meteor.git"
+  },
+  "author": "Julian Ćwirko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juliancwirko/react-redux-webpack-meteor/issues"
+  },
+  "homepage": "https://github.com/juliancwirko/react-redux-webpack-meteor",
+  "dependencies": {
+    "asteroid": "^2.0.3",
+    "history": "~4.4.0",
+    "lodash": "~4.17.2",
+    "react": "~15.4.1",
+    "react-dom": "~15.4.1",
+    "react-redux": "^4.4.6",
+    "react-router": "~3.0.0",
+    "react-s-alert": "^1.2.0",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.1.0",
+    "rupture": "~0.6.2",
+    "s-grid": "~1.2.0",
+    "react-css-modules": "^4.0.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "~6.5.3",
+    "babel-core": "~6.18.2",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "~6.2.8",
+    "babel-plugin-webpack-loaders": "^0.8.0",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-es2015": "~6.18.0",
+    "babel-preset-react": "~6.16.0",
+    "babel-preset-stage-0": "~6.16.0",
+    "chai": "^3.5.0",
+    "css-loader": "~0.26.0",
+    "enzyme": "^2.6.0",
+    "eslint": "~3.11.0",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-babel": "^4.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.0.0",
+    "eslint-plugin-react": "~6.7.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "~0.9.0",
+    "html-webpack-plugin": "^2.24.1",
+    "jsdom": "^9.8.3",
+    "mocha": "^3.2.0",
+    "node-libs-browser": "~2.0.0",
+    "postcss-loader": "~1.1.1",
+    "react-addons-test-utils": "~15.4.1",
+    "react-hot-loader": "~3.0.0-beta.6",
+    "sinon": "^1.17.6",
+    "style-loader": "~0.13.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "~2.3.1",
+    "url-loader": "~0.5.7",
+    "webpack": "~1.13.3",
+    "webpack-dev-server": "~1.16.2"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module"
+    },
+    "extends": [
+      "airbnb"
+    ],
+    "rules": {
+      "no-underscore-dangle": [
+        "error",
+        {
+          "allow": [
+            "_id"
+          ]
+        }
+      ],
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+      "react/forbid-prop-types": [1, { "forbid": ["any"] }]
+    },
+    "env": {
+        "browser": true,
+        "node": true
+    }
+  }
+}
