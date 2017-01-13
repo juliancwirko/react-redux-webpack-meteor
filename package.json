@@ -1,0 +1,23 @@
+{
+  "name": "react-redux-webpack-meteor",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "concurrently \"cd server && meteor npm install\" \"cd client && npm install\"",
+    "start": "concurrently \"cd server && meteor -p 9000\" \"cd client && npm start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juliancwirko/react-redux-webpack-meteor.git"
+  },
+  "author": "Julian Ćwirko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juliancwirko/react-redux-webpack-meteor/issues"
+  },
+  "homepage": "https://github.com/juliancwirko/react-redux-webpack-meteor#readme",
+  "dependencies": {
+    "concurrently": "^3.1.0"
+  }
+}
