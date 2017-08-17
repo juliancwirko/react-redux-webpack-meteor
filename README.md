@@ -1,6 +1,6 @@
 ## Demo: React, Webpack, Redux and Meteor as a backend only
 
-### Sorry, project is not maintained anymore. But it is a very good example of the topic.
+### Sorry, project is not maintained anymore. But it is a very good example of the topic. Check out [#9](https://github.com/juliancwirko/react-redux-webpack-meteor/issues/9) for more info.
 
 You can read article about it:
 - [React with Webpack + Meteor as a backend](http://julian.io/react-with-webpack-meteor-as-a-backend/)
