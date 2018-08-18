@@ -4,8 +4,8 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "concurrently \"cd server && meteor npm install\" \"cd client && npm install\"",
-    "start": "concurrently \"cd server && meteor -p 9000\" \"cd client && npm start\""
+    "postinstall": "concurrently \"cd new-server && meteor npm install\" \"cd client && npm install\"",
+    "start": "concurrently \"cd new-server && meteor -p 9000\" \"cd client && npm start\""
   },
   "repository": {
     "type": "git",
