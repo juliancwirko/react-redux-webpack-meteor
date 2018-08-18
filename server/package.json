@@ -1,5 +1,5 @@
 {
-  "name": "new-server",
+  "name": "server",
   "private": true,
   "scripts": {
     "start": "meteor run",
@@ -13,7 +13,6 @@
   },
   "meteor": {
     "mainModule": {
-      "client": "client/main.js",
       "server": "server/main.js"
     },
     "testModule": "tests/main.js"
