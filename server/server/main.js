@@ -13,11 +13,11 @@ const Todo = new Meteor.Collection('todo');
 //
 // Read more: http://guide.meteor.com/data-loading.html
 Meteor.publish('todo', function () {
-  return Todo.find();
+    return Todo.find();
 });
 
 Meteor.publish('user', function () {
-  return Meteor.users.find({_id: this.userId});
+    return Meteor.users.find({_id: this.userId});
 });
 
 // We can also use server side methods and call them from our client app
@@ -26,40 +26,40 @@ Meteor.publish('user', function () {
 //
 // Read more: http://guide.meteor.com/methods.html
 Meteor.methods({
-  getTodo(id) {
-    return Todo.findOne(id);
-  },
-  getTodos() {
-    return Todo.find().fetch();
-  },
-  addTodo(message) {
-    return Todo.insert({message: message});
-  },
-  removeTodo(id) {
-    return Todo.remove({_id: id});
-  },
-  editTodo(id, finished) {
-    return Todo.update({_id: id}, {$set: {finished: finished}});
-  }
+    getTodo(id) {
+        return Todo.findOne(id);
+    },
+    getTodos() {
+        return Todo.find().fetch();
+    },
+    addTodo(message) {
+        return Todo.insert({message: message});
+    },
+    removeTodo(id) {
+        return Todo.remove({_id: id});
+    },
+    editTodo(id, finished) {
+        return Todo.update({_id: id}, {$set: {finished: finished}});
+    }
 });
 
 
 // Deny all client-side updates on the Lists collection
 // Read more about security stuff: http://guide.meteor.com/security.html
 Todo.deny({
-  insert() { return true; },
-  update() { return true; },
-  remove() { return true; },
+    insert() { return true; },
+    update() { return true; },
+    remove() { return true; },
 });
 
 // Example user - just a simple example without validation etc.
 // Read more at: https://guide.meteor.com/accounts.html
 Meteor.startup(() => {
-  const theOnlyUser = Meteor.users.find().fetch();
-  if (!theOnlyUser.length) {
-    Accounts.createUser({
-      username: 'admin',
-      password: 'pass'
-    });
-  }
+    const theOnlyUser = Meteor.users.find().fetch();
+    if (!theOnlyUser.length) {
+        Accounts.createUser({
+            username: 'admin',
+            password: 'pass'
+        });
+    }
 });
